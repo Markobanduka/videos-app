@@ -20,12 +20,13 @@ const SearchBar: React.FC<SearchProps> = ({ videos, setFilteredVideos }) => {
   };
 
   return (
-    <form>
+    <form className="flex justify-center">
       <label>
-        Search
         <input
           type="text"
           name="search"
+          placeholder="Search..."
+          className="input input-bordered input-primary w-48"
           onInput={(e: React.ChangeEvent<HTMLInputElement>) =>
             SearchVideoByName(e.currentTarget.value)
           }

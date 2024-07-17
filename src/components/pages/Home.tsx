@@ -19,10 +19,10 @@ const Home: React.FC = () => {
   // };
 
   return (
-    <>
+    <div className="flex flex-col gap-3">
       <SearchBar videos={videos} setFilteredVideos={setFilteredVideos} />
-      <AllVideos videos={filteredVideos} />
-    </>
+      <AllVideos filteredVideos={filteredVideos} />
+    </div>
   );
 };
 

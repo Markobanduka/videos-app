@@ -6,13 +6,13 @@ interface Video {
 }
 
 interface AllVideosProps {
-  videos: Video[];
+  filteredVideos: Video[];
 }
 
-const AllVideos: React.FC<AllVideosProps> = ({ videos }) => {
+const AllVideos: React.FC<AllVideosProps> = ({ filteredVideos }) => {
   return (
     <div>
-      {videos.map((video, index) => (
+      {filteredVideos.map((video, index) => (
         <div className="w-48 block" key={index}>
           <a href={video.url} target="blank">
             <img src={video.cover} alt={video.title} />

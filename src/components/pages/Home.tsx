@@ -14,13 +14,13 @@ const Home: React.FC = () => {
   const [videos, setVideos] = useState<Video[]>(VIDEOS);
   const [filteredVideos, setFilteredVideos] = useState<Video[]>(VIDEOS);
 
-  const handleSearchVideo = (result: Video[]) => {
-    setFilteredVideos(result);
-  };
+  // const handleSearchVideo = (result: Video[]) => {
+  //   setFilteredVideos(result);
+  // };
 
   return (
     <>
-      <SearchBar videos={videos} onSearchVideo={handleSearchVideo} />
+      <SearchBar videos={videos} setFilteredVideos={setFilteredVideos} />
       <AllVideos videos={filteredVideos} />
     </>
   );

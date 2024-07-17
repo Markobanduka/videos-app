@@ -7,16 +7,16 @@ interface Video {
 
 interface SearchProps {
   videos: Video[];
-  onSearchVideo: (videos: Video[]) => void;
+  setFilteredVideos: (videos: Video[]) => void;
 }
 
-const SearchBar: React.FC<SearchProps> = ({ videos, onSearchVideo }) => {
+const SearchBar: React.FC<SearchProps> = ({ videos, setFilteredVideos }) => {
   const SearchVideoByName = (name: string) => {
     const searchTerm = name.toLowerCase();
     const filteredVideos = videos.filter((video) =>
       video.title.toLowerCase().includes(searchTerm)
     );
-    onSearchVideo(filteredVideos);
+    setFilteredVideos(filteredVideos);
   };
 
   return (

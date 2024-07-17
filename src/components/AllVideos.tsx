@@ -1,6 +1,15 @@
-import videos from "../videos.json";
+interface Video {
+  id: number;
+  title: string;
+  cover: string;
+  url: string;
+}
 
-const AllVideos = () => {
+interface AllVideosProps {
+  videos: Video[];
+}
+
+const AllVideos: React.FC<AllVideosProps> = ({ videos }) => {
   return (
     <div>
       {videos.map((video, index) => (
